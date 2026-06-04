@@ -12,8 +12,16 @@ import express from "express";
 const app = express();
 
 
-connectDB()
+connectDB() // as async function that returns a Promise, we can use .then() and .catch() to handle the success and error cases of the connection.
+.then(() => {
+    app.listen(process.env.PORT || 8000, ()=>{
+        console.log(`Server is running on port ${process.env.PORT || 8000}`);
+    });
+})
 
+.catch((error) => {
+    console.log("MONGODB CONNECTION ERROR:", error);
+});
 
 
 
