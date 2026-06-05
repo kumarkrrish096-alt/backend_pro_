@@ -7,9 +7,10 @@ import {DB_NAME} from "./constants.js";
 import connectDB from "./db/index.js";
 
 dotenv.config({ path: "./.env" });
+import { app } from "./app.js";
 
-import express from "express";
-const app = express();
+// import express from "express";
+// const app = express();
 
 
 connectDB() // as async function that returns a Promise, we can use .then() and .catch() to handle the success and error cases of the connection.
