@@ -19,7 +19,7 @@ import { request } from "express";
 
 //2nd way 1s to write the asyncHandler function:
 const asyncHandler = (requestHandler) => {
-    (req, res, next) => {
+  return  (req, res, next) => {
         Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err));
     }
 }
